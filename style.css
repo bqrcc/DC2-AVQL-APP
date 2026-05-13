@@ -127,7 +127,7 @@ button {
 
 .empty-btn {
   width: 100px;
-  height: 65px;
+  height: 70px;
   border: none;
   font-size: 18px;
   background: white;
@@ -136,7 +136,7 @@ button {
 
 .full-btn {
   width: 100px;
-  height: 65px;
+  height: 70px;
   border: none;
   font-size: 18px;
   background: rgb(190, 90, 23);
@@ -144,11 +144,12 @@ button {
 }
 
 .next-btn {
-  padding: 20px;
+  margin: 10 ;
+  padding: 10px;
   font-size: 18px;
   border: none;
   border-radius: 10px;
-  background: #ff8800;
+  background: #c300ff;
   cursor: pointer;
   height: fit-content;
 }

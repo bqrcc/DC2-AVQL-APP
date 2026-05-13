@@ -8,16 +8,21 @@ function saveData() {
 }
 
 function loadData() {
-  const saved = localStorage.getItem('warehouseData');
+  const saved =
+    localStorage.getItem('warehouseData');
 
   if (saved) {
     return JSON.parse(saved);
   }
 
-  return warehouseData;
+  return null;
 }
 
-warehouseData = loadData();
+const loadedData = loadData();
+
+if (loadedData) {
+  warehouseData = loadedData;
+}
 
 
 const app = document.getElementById('app');
@@ -388,11 +393,11 @@ function exportToExcel(aisle) {
   const now = new Date();
 
   const timestamp =
-    now.getFullYear() +
+    String(now.getDate()).padStart(2, "0") +
     "-" +
     String(now.getMonth() + 1).padStart(2, "0") +
     "-" +
-    String(now.getDate()).padStart(2, "0") +
+    now.getFullYear() +
     "_" +
     String(now.getHours()).padStart(2, "0") +
     "." +
@@ -470,9 +475,19 @@ function exportToExcel(aisle) {
 
 function resetData() {
 
+  const confirmed = confirm(
+    'Reset all warehouse data?'
+  );
+
+  if (!confirmed) return;
+
   localStorage.removeItem('warehouseData');
 
-  location.reload();
+  warehouseData = structuredClone(defaultWarehouseData);
+
+  saveData();
+
+  renderHomePage();
 }
 
 

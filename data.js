@@ -1,4 +1,4 @@
-let warehouseData = {
+let defaultWarehouseData  = {
   SA: [
 [{ location: 'SA002Z', empty: false },
 { location: 'SA002V', empty: false },
@@ -6791,3 +6791,6 @@ let warehouseData = {
 { location: 'VC002M', empty: false },]
   ]
 };
+
+let warehouseData =
+  structuredClone(defaultWarehouseData);

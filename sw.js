@@ -6,7 +6,8 @@ const urlsToCache = [
   './style.css',
   './app.js',
   './data.js',
-  './manifest.json'
+  './manifest.json',
+  './xlsx.full.min.js',
 ];
 
 self.addEventListener('install', event => {
@@ -36,6 +37,9 @@ self.addEventListener('fetch', event => {
     caches.match(event.request)
       .then(response => {
         return response || fetch(event.request);
+      })
+      .catch(() => {
+        console.log('Offline fetch failed');
       })
   );
 });

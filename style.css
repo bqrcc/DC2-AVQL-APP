@@ -1,13 +1,19 @@
 body {
   font-family: Arial, sans-serif;
+
   margin: 0;
-  padding: 20px;
+  padding: 10px;
+
   background: #f1f5f9;
 
   border: 12px solid purple;
-  border-radius: 20px;
+
   box-sizing: border-box;
-  min-height: 100vh;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
 }
 
 header {
@@ -23,7 +29,7 @@ header h1 {
 }
 
 header h1 img {
-  width: 120px;
+  width: 80px;
   height: auto;
 }
 
@@ -34,11 +40,47 @@ header h1 img {
 }
 
 button {
-  padding: 20px;
-  font-size: 24px;
+  padding: 14px;
+  font-size: 18px;
   border: none;
   border-radius: 10px;
   background: #ff8800;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.button2 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 14px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: #ff8800;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.button3 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 14px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: #00c0e2d8;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.button4 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 14px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: #ff0000d8;
   color: rgb(0, 0, 0);
   cursor: pointer;
 }
@@ -65,13 +107,13 @@ button {
 
 .stack-container {
   background: #ff8800;
-  width: 160px;
+  width: 130px;
   /*margin: auto;
   */
-  padding: 20px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .rack-card {
@@ -79,12 +121,13 @@ button {
 }
 
 .rack-card h3 {
-  margin: 0 0 10px;
+  margin: 0;
+  font-size: 16px;
 }
 
 .empty-btn {
   width: 100px;
-  height: 100px;
+  height: 65px;
   border: none;
   font-size: 18px;
   background: white;
@@ -93,7 +136,7 @@ button {
 
 .full-btn {
   width: 100px;
-  height: 100px;
+  height: 65px;
   border: none;
   font-size: 18px;
   background: rgb(190, 90, 23);
@@ -101,15 +144,20 @@ button {
 }
 
 .next-btn {
-  display: block;
-  margin: 30px auto;
-  padding: 15px 25px;
-  font-size: 20px;
+  padding: 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: #ff8800;
+  cursor: pointer;
+  height: fit-content;
 }
 
 .stacks-wrapper {
   display: flex;
   justify-content: center;
+  gap: 0;
+  flex-wrap: nowrap;
 }
 
 .stack-column {
@@ -122,4 +170,64 @@ button {
   margin-top: 15px;
   padding: 12px 20px;
   font-size: 16px;
+}
+
+.top-bar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  width: 100%;
+}
+
+.back-btn {
+  justify-self: start;
+}
+
+.top-bar h1 {
+  justify-self: center;
+  margin: 0;
+  text-align: center;
+}
+
+.spacer {
+  justify-self: end;
+}
+
+.middle-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.complete-message {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 80px;
+  font-weight: bold;
+  color: green;
+}
+
+.title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-group h1,
+.title-group h2 {
+  margin: 0;
+}
+
+.center-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-top: 80px;
+}
+
+html, body {
+  touch-action: manipulation;
 }

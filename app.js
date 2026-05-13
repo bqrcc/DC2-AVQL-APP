@@ -26,25 +26,37 @@ let currentStack = 0;
 
 function renderHomePage() {
   app.innerHTML = `
+
+    <header>
+    <h1>
+      <img src="b&q.png" width="200" height="200">
+      DC2 AVLQ Check
+      <img src="b&q.png" width="200" height="200">
+    </h1>
+    </header>
+
     <div class="button-container">
-      <button onclick="showAisle('SA')">SA</button>
-      <button onclick="showAisle('SB')">SB</button>
-      <button onclick="showAisle('SC')">SC</button>
-      <button onclick="showAisle('SD')">SD</button>
-      <button onclick="showAisle('SE')">SE</button>
+      <button class="button2" onclick="showAisle('SA')">SA</button>
+      <button class="button2" onclick="showAisle('SB')">SB</button>
+      <button class="button2" onclick="showAisle('SC')">SC</button>
+      <button class="button2" onclick="showAisle('SD')">SD</button>
+      <button class="button2" onclick="showAisle('SE')">SE</button>
 
       <br>
-      <button onclick="showAisle('VA')">VA</button>
-      <button onclick="showAisle('VB')">VB</button>
-      <button onclick="showAisle('VC')">VC</button>
+      <button class="button3" onclick="showAisle('VA')">VA</button>
+      <button class="button3" onclick="showAisle('VB')">VB</button>
+      <button class="button3" onclick="showAisle('VC')">VC</button>
 
-      <button class="export-btn" onclick="exportOption()">
+      <!--
+
+      <button class="button4" class="export-btn" onclick="exportOption()">
         EXPORT EXCEL
       </button>
+      -->
 
       <br>
 
-      <button onclick="resetData()">
+      <button class="button4" onclick="resetData()">
         RESET DATA
       </button>
     </div>
@@ -98,63 +110,75 @@ function renderStack(aisle) {
     const rightStack = warehouseData[aisle][currentStack + 2];
 
     app.innerHTML = `
-    <button class="back-btn" onclick="renderHomePage()">
-      ← Back
-    </button>
+      <div class="top-bar">
+        <button class="back-btn" onclick="renderHomePage()">
+          ← Main Menu
+        </button>
 
-    <h2>${aisle}</h2>
+        <div class="title-group">
+          <h1>${aisle}</h1>
+          <h2>select all that are empty</h2>
+        </div>
 
-    <div class="stacks-wrapper">
-
-      <div class="stack-column">
-
-      <div class="stack-container" id="leftStack"></div>
-
-      <button
-        class="stack-empty-btn"
-        onclick="emptyStack('${aisle}', ${currentStack})"
-      >
-        EMPTY STACK
-      </button>
-
+      <div class="spacer"></div>
     </div>
 
-    <div class="stack-column">
-
-      <div class="stack-container" id="centerStack"></div>
-
-      <button
-        class="stack-empty-btn"
-        onclick="emptyStack('${aisle}', ${currentStack + 1})"
-      >
-        EMPTY STACK
-      </button>
-    </div>
-
-
-    <div class="stack-column">
-
-      <div class="stack-container" id="rightStack"></div>
-
-      <button
-        class="stack-empty-btn"
-        onclick="emptyStack('${aisle}', ${currentStack + 2})"
-      >
-        EMPTY STACK
-      </button>
-
-    </div>
-
-
-    </div>
-
-    <button class="next-btn" onclick="nextStack('${aisle}')">
-      NEXT BUTTON
-    </button>
+    <div class="middle-row">
 
     <button class="next-btn" onclick="backStack('${aisle}')">
      BACK BUTTON
     </button>
+
+
+      <div class="stacks-wrapper">
+
+        <div class="stack-column">
+
+        <div class="stack-container" id="leftStack"></div>
+
+        <button
+          class="stack-empty-btn"
+          onclick="emptyStack('${aisle}', ${currentStack})"
+        >
+          EMPTY STACK
+        </button>
+
+      </div>
+
+      <div class="stack-column">
+
+        <div class="stack-container" id="centerStack"></div>
+
+        <button
+          class="stack-empty-btn"
+          onclick="emptyStack('${aisle}', ${currentStack + 1})"
+        >
+          EMPTY STACK
+        </button>
+      </div>
+
+
+      <div class="stack-column">
+
+        <div class="stack-container" id="rightStack"></div>
+
+        <button
+          class="stack-empty-btn"
+          onclick="emptyStack('${aisle}', ${currentStack + 2})"
+        >
+          EMPTY STACK
+        </button>
+
+      </div>
+
+
+      </div>
+
+      <button class="next-btn" onclick="nextStack('${aisle}')">
+      NEXT BUTTON
+      </button>
+    </div>
+
   `;
 
     renderSingleStack(leftStack, 'leftStack', aisle);
@@ -168,49 +192,62 @@ function renderStack(aisle) {
     const rightStack = warehouseData[aisle][currentStack + 1];
 
   app.innerHTML = `
-    <button class="back-btn" onclick="renderHomePage()">
-      ← Back
-    </button>
+    <div class="top-bar">
+        <button class="back-btn" onclick="renderHomePage()">
+          ← Main Menu
+        </button>
+        <div class="title-group">
+          <h1>${aisle}</h1>
+          <h2>select all that are empty</h2>
+        </div>
 
-    <h2>${aisle}</h2>
+      <div class="spacer"></div>
+    </div>
 
-    <div class="stacks-wrapper">
+
+    <div class="middle-row">
+
+     <button class="next-btn" onclick="backStack('${aisle}')">
+     BACK BUTTON
+      </button>
+
+      <div class="stacks-wrapper">
+
+        <div class="stack-column">
+
+        <div class="stack-container" id="leftStack"></div>
+
+        <button
+          class="stack-empty-btn"
+          onclick="emptyStack('${aisle}', ${currentStack})"
+        >
+          EMPTY STACK
+        </button>
+
+      </div>
 
       <div class="stack-column">
 
-      <div class="stack-container" id="leftStack"></div>
+        <div class="stack-container" id="rightStack"></div>
 
-      <button
-        class="stack-empty-btn"
-        onclick="emptyStack('${aisle}', ${currentStack})"
-      >
-        EMPTY STACK
-      </button>
+        <button
+          class="stack-empty-btn"
+          onclick="emptyStack('${aisle}', ${currentStack + 1})"
+        >
+          EMPTY STACK
+        </button>
 
-    </div>
+      </div>
 
-    <div class="stack-column">
-
-      <div class="stack-container" id="rightStack"></div>
-
-      <button
-        class="stack-empty-btn"
-        onclick="emptyStack('${aisle}', ${currentStack + 1})"
-      >
-        EMPTY STACK
-      </button>
-
-    </div>
-
-    </div>
+      </div>
 
     <button class="next-btn" onclick="nextStack('${aisle}')">
       NEXT BUTTON
     </button>
 
-    <button class="next-btn" onclick="backStack('${aisle}')">
-     BACK BUTTON
-    </button>
+
+    </div>
+
   `;
 
     renderSingleStack(leftStack, 'leftStack', aisle);
@@ -280,7 +317,34 @@ function nextStack(aisle) {
   if (
     currentStack >= warehouseData[aisle].length
   ) {
-    currentStack = 0;
+
+    exportToExcel(aisle)
+
+    app.innerHTML = `
+    <div class="top-bar">
+        <button class="back-btn" onclick="renderHomePage()">
+          ← Main Menu
+        </button>
+
+      <div class="spacer"></div>
+    </div>
+
+    <div class="complete-message">
+        ✅ Everything in ${aisle} has been checked
+      </div>
+
+    <div class="complete-message">
+        File Saved In Downloads Folder
+      </div>
+
+    <div class="center-button">
+      <button class="next-btn" onclick="backStack('${aisle}')">
+      BACK BUTTON
+      </button>
+    </div>
+    `
+    return;
+
   }
 
   renderStack(aisle);
@@ -321,6 +385,21 @@ function emptyStack(aisle, stackIndex) {
 
 function exportToExcel(aisle) {
 
+  const now = new Date();
+
+  const timestamp =
+    now.getFullYear() +
+    "-" +
+    String(now.getMonth() + 1).padStart(2, "0") +
+    "-" +
+    String(now.getDate()).padStart(2, "0") +
+    "_" +
+    String(now.getHours()).padStart(2, "0") +
+    "." +
+    String(now.getMinutes()).padStart(2, "0")
+
+
+
   if (aisle == "ALL") {
     const workbook = XLSX.utils.book_new();
 
@@ -351,7 +430,7 @@ function exportToExcel(aisle) {
 
     XLSX.writeFile(
       workbook,
-      'AVQL-ALL.xlsx'
+      `AVQL-ALL-${timestamp}.xlsx`
     );
     
   } else {
@@ -381,7 +460,7 @@ function exportToExcel(aisle) {
 
     XLSX.writeFile(
       workbook,
-      `AVQL-${aisle}.xlsx`
+      `AVQL-${aisle}-${timestamp}.xlsx`
     );
 
   }

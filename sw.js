@@ -1,12 +1,12 @@
 const CACHE_NAME = 'warehouse-app-v2';
 
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/app.js',
-  '/data.js',
-  '/manifest.json'
+  './',
+  './index.html',
+  './style.css',
+  './app.js',
+  './data.js',
+  './manifest.json'
 ];
 
 self.addEventListener('install', event => {
@@ -15,6 +15,7 @@ self.addEventListener('install', event => {
       .then(cache => cache.addAll(urlsToCache))
   );
 });
+
 
 self.addEventListener('activate', event => {
   event.waitUntil(
@@ -32,7 +33,9 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   event.respondWith(
-    fetch(event.request)
-      .catch(() => caches.match(event.request))
+    caches.match(event.request)
+      .then(response => {
+        return response || fetch(event.request);
+      })
   );
 });

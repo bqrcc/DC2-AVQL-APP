@@ -1,17 +1,24 @@
-
+const DATA_VERSION = 2;
 
 function saveData() {
   localStorage.setItem(
-    'warehouseData',
-    JSON.stringify(warehouseData)
+  'warehouseVersion',
+  DATA_VERSION
   );
 }
 
 function loadData() {
+
   const saved =
     localStorage.getItem('warehouseData');
 
-  if (saved) {
+  const savedVersion =
+    localStorage.getItem('warehouseVersion');
+
+  if (
+    saved &&
+    savedVersion == DATA_VERSION
+  ) {
     return JSON.parse(saved);
   }
 
@@ -41,7 +48,7 @@ function renderHomePage() {
     </header>
 
     <div class="button-container">
-      <button class="button2" onclick="showAisle('SA')">SAA</button>
+      <button class="button2" onclick="showAisle('SA')">SA</button>
       <button class="button2" onclick="showAisle('SB')">SB</button>
       <button class="button2" onclick="showAisle('SC')">SC</button>
       <button class="button2" onclick="showAisle('SD')">SD</button>

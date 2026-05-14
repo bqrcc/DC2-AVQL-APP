@@ -41,15 +41,16 @@ function renderHomePage() {
     </header>
 
     <div class="button-container">
-      <button  onclick="showAisle('SA')">SA</button>
-      <button  onclick="showAisle('SB')">SB</button>
-      <button  onclick="showAisle('SD')">SD</button>
-      <button  onclick="showAisle('SE')">SE</button>
+      <button class="button2" onclick="showAisle('SA')">SAA</button>
+      <button class="button2" onclick="showAisle('SB')">SB</button>
+      <button class="button2" onclick="showAisle('SC')">SC</button>
+      <button class="button2" onclick="showAisle('SD')">SD</button>
+      <button class="button2" onclick="showAisle('SE')">SE</button>
 
       <br>
-      <button onclick="showAisle('VA')">VA</button>
-      <button  onclick="showAisle('VB')">VB</button>
-      <button  onclick="showAisle('VC')">VC</button>
+      <button class="button3" onclick="showAisle('VA')">VA</button>
+      <button class="button3" onclick="showAisle('VB')">VB</button>
+      <button class="button3" onclick="showAisle('VC')">VC</button>
 
       <!--
 
@@ -98,6 +99,8 @@ function exportOption() {
 }
 
 function showAisle(aisle) {
+
+  alert("BUTTON WORKED: " + aisle);
 
   currentStack = 0;
 

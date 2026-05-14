@@ -41,16 +41,15 @@ function renderHomePage() {
     </header>
 
     <div class="button-container">
-      <button class="button2" onclick="showAisle('SA')">SA</button>
-      <button class="button2" onclick="showAisle('SB')">SB</button>
-      <button class="button2" onclick="showAisle('SC')">SC</button>
-      <button class="button2" onclick="showAisle('SD')">SD</button>
-      <button class="button2" onclick="showAisle('SE')">SE</button>
+      <button  onclick="showAisle('SA')">SA</button>
+      <button  onclick="showAisle('SB')">SB</button>
+      <button  onclick="showAisle('SD')">SD</button>
+      <button  onclick="showAisle('SE')">SE</button>
 
       <br>
       <button onclick="showAisle('VA')">VA</button>
-      <button class="button3" onclick="showAisle('VB')">VB</button>
-      <button class="button3" onclick="showAisle('VC')">VC</button>
+      <button  onclick="showAisle('VB')">VB</button>
+      <button  onclick="showAisle('VC')">VC</button>
 
       <!--
 

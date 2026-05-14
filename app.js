@@ -1,24 +1,17 @@
-const DATA_VERSION = 2;
+
 
 function saveData() {
   localStorage.setItem(
-  'warehouseVersion',
-  DATA_VERSION
+    'warehouseData',
+    JSON.stringify(warehouseData)
   );
 }
 
 function loadData() {
-
   const saved =
     localStorage.getItem('warehouseData');
 
-  const savedVersion =
-    localStorage.getItem('warehouseVersion');
-
-  if (
-    saved &&
-    savedVersion == DATA_VERSION
-  ) {
+  if (saved) {
     return JSON.parse(saved);
   }
 
@@ -49,7 +42,7 @@ function renderHomePage() {
 
     <div class="button-container">
       <button class="button2" onclick="showAisle('SA')">SA</button>
-      <button class="button2" onclick="showAisle('SB')">SB</button>
+      <button class="button2" onclick="showAisle('SB')">SBB</button>
       <button class="button2" onclick="showAisle('SC')">SC</button>
       <button class="button2" onclick="showAisle('SD')">SD</button>
       <button class="button2" onclick="showAisle('SE')">SE</button>
@@ -107,14 +100,17 @@ function exportOption() {
 
 function showAisle(aisle) {
 
-  alert("BUTTON WORKED: " + aisle);
-
   currentStack = 0;
 
   renderStack(aisle);
 }
 
 function renderStack(aisle) {
+
+console.log(aisle);
+console.log(currentStack);
+console.log(warehouseData[aisle]);
+alert(JSON.stringify(warehouseData[aisle]));
 
 
   if (aisle == "VA" || aisle == "VB" || aisle == "VC" ) {

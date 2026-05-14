@@ -48,7 +48,7 @@ function renderHomePage() {
       <button class="button2" onclick="showAisle('SE')">SE</button>
 
       <br>
-      <button class="button3" onclick="showAisle('VA')">VA</button>
+      <button onclick="showAisle('VA')">VA</button>
       <button class="button3" onclick="showAisle('VB')">VB</button>
       <button class="button3" onclick="showAisle('VC')">VC</button>
 

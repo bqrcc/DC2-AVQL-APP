@@ -41,7 +41,7 @@ function renderHomePage() {
     </header>
 
     <div class="button-container">
-      <button onclick="showAisle('SA')">SA</button>
+      <button class="button2" onclick="showAisle('SA')">SA</button>
       <button class="button2" onclick="showAisle('SB')">SB</button>
       <button class="button2" onclick="showAisle('SC')">SC</button>
       <button class="button2" onclick="showAisle('SD')">SD</button>

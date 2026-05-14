@@ -121,7 +121,7 @@ function renderStack(aisle) {
 
         <div class="title-group">
           <h1>${aisle}</h1>
-          <h2>select all that are empty</h2>
+          <h2>Select all empty loctions</h2>
         </div>
 
       <div class="spacer"></div>
@@ -202,7 +202,7 @@ function renderStack(aisle) {
         </button>
         <div class="title-group">
           <h1>${aisle}</h1>
-          <h2>select all that are empty</h2>
+          <h2>Select all empty loctions</h2>
         </div>
 
       <div class="spacer"></div>

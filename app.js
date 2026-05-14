@@ -138,6 +138,8 @@ function renderStack(aisle) {
      BACK BUTTON
     </button>
 
+    <div class="stacks">
+
 
       <div class="stacks-wrapper">
 
@@ -179,6 +181,7 @@ function renderStack(aisle) {
         </button>
 
       </div>
+    </div>
 
 
       </div>
@@ -207,7 +210,7 @@ function renderStack(aisle) {
         </button>
         <div class="title-group">
           <h1>${aisle}</h1>
-          <h2>Select all empty locations</h2>
+          <h2>Select all "EMPTY" locations</h2>
         </div>
 
       <div class="spacer"></div>
@@ -219,6 +222,8 @@ function renderStack(aisle) {
      <button class="next-btn" onclick="backStack('${aisle}')">
      BACK BUTTON
       </button>
+
+      <div class="stacks">
 
       <div class="stacks-wrapper">
 
@@ -246,8 +251,9 @@ function renderStack(aisle) {
           EMPTY STACK
         </button>
 
-      </div>
+        </div>
 
+      </div>
       </div>
 
     <button class="next-btn" onclick="nextStack('${aisle}')">

@@ -18,11 +18,11 @@ function loadData() {
   return null;
 }
 
-const loadedData = loadData();
+//const loadedData = loadData();
 
-if (loadedData) {
-  warehouseData = loadedData;
-}
+//if (loadedData) {
+//  warehouseData = loadedData;
+//}
 
 
 const app = document.getElementById('app');

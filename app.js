@@ -64,6 +64,11 @@ function renderHomePage() {
       <button class="button4" onclick="resetData()">
         RESET DATA
       </button>
+      <br>
+
+      <h2>
+        Select Reset Data Button at the start of checks
+      </h2>
     </div>
   `;
 }

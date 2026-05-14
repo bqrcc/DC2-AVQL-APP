@@ -121,7 +121,7 @@ function renderStack(aisle) {
 
         <div class="title-group">
           <h1>${aisle}</h1>
-          <h2>Select all empty loctions</h2>
+          <h2>Select all empty locations</h2>
         </div>
 
       <div class="spacer"></div>
@@ -202,7 +202,7 @@ function renderStack(aisle) {
         </button>
         <div class="title-group">
           <h1>${aisle}</h1>
-          <h2>Select all empty loctions</h2>
+          <h2>Select all empty locations</h2>
         </div>
 
       <div class="spacer"></div>
@@ -339,6 +339,9 @@ function nextStack(aisle) {
 
     <div class="complete-message">
         File Saved In Downloads Folder
+      </div>
+      <div class="complete-message">
+        Return to Admin Office and upload file to Weekly AVQL Audit System
       </div>
 
     <div class="center-button">

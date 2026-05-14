@@ -107,12 +107,6 @@ function showAisle(aisle) {
 
 function renderStack(aisle) {
 
-console.log(aisle);
-console.log(currentStack);
-console.log(warehouseData[aisle]);
-alert(JSON.stringify(warehouseData[aisle]));
-
-
   if (aisle == "VA" || aisle == "VB" || aisle == "VC" ) {
 
     const leftStack = warehouseData[aisle][currentStack];

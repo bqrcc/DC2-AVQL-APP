@@ -1,4 +1,4 @@
-const CACHE_NAME = 'warehouse-app-v4';
+const CACHE_NAME = 'warehouse-app-v1';
 
 const urlsToCache = [
   './',

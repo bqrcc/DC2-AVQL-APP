@@ -34,9 +34,9 @@ function renderHomePage() {
 
     <header>
     <h1>
-      <img src="b&q.png" width="200" height="200">
+      <img src="./bq.png" width="200" height="200">
       DC2 AVLQ Check
-      <img src="b&q.png" width="200" height="200">
+      <img src="./bq.png" width="200" height="200">
     </h1>
     </header>
 

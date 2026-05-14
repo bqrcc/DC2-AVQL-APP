@@ -8,6 +8,7 @@ const urlsToCache = [
   './data.js',
   './manifest.json',
   './xlsx.full.min.js',
+  './bq.png',
 ];
 
 self.addEventListener('install', event => {

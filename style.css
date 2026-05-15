@@ -172,6 +172,17 @@ button {
   margin-bottom: 10px;
 }
 
+.blocked-btn {
+  width: 100px;
+  height: 70px;
+  border: none;
+  font-size: 18px;
+  color: white;
+  background: rgb(0, 0, 0);
+  padding: 2px;
+  margin-bottom: 10px;
+}
+
 .next-btn {
   margin: 10 ;
   padding: 10px;

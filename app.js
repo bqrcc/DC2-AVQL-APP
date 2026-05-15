@@ -291,10 +291,10 @@ function renderSingleStack(stackData, containerId, aisle) {
     div.innerHTML = `
 
       <button class="
-        status-btn
-        ${item.empty ? 'empty-btn' : 'full-btn'}
+         status-btn
+        ${item.blocked ? 'blocked-btn' : item.empty ? 'empty-btn' : 'full-btn'}
       ">
-        ${item.empty ? 'EMPTY' : 'FULL'}
+        ${item.blocked ? 'BLOCKED' : item.empty ? 'EMPTY' : 'FULL'}
       </button>
 
       <h3>${item.location}</h3>
@@ -305,7 +305,9 @@ function renderSingleStack(stackData, containerId, aisle) {
 
     statusButton.addEventListener('click', () => {
 
-      item.empty = !item.empty;
+      if (!item.blocked) {
+        item.empty = !item.empty;
+      }
 
       //save
       saveData();  
@@ -431,7 +433,7 @@ function exportToExcel(aisle) {
 
           rows.push({
             Location: item.location,
-            Status: item.empty ? 'EMPTY' : 'FULL'
+            Status: item.blocked ? 'BLOCKED' : item.empty ? 'EMPTY' : 'FULL'
           });
         });
       });
@@ -462,7 +464,7 @@ function exportToExcel(aisle) {
 
           rows.push({
             Location: item.location,
-            Status: item.empty ? 'EMPTY' : 'FULL'
+            Status: item.blocked ? 'BLOCKED' : item.empty ? 'EMPTY' : 'FULL'
           });
         });
       });

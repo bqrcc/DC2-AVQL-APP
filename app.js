@@ -48,6 +48,7 @@ function renderHomePage() {
       <button class="button2" onclick="showAisle('SE')">SE</button>
 
       <br>
+      <br>
       <button class="button3" onclick="showAisle('VA')">VA</button>
       <button class="button3" onclick="showAisle('VB')">VB</button>
       <button class="button3" onclick="showAisle('VC')">VC</button>
@@ -60,11 +61,12 @@ function renderHomePage() {
       -->
 
       <br>
+      <br>
 
       <button class="button4" onclick="resetData()">
         RESET DATA
       </button>
-      <br>
+  
 
       <h2>
         Select Reset Data Button at the start of checks
